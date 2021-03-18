@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Cameron White
+{% endblock %}
+
+{% block content %}
+    <br/><br/>
+
+    <!--<img src="{% static 'portfolio/images/Rocky_1.png' %}" class="img-fluid" alt="Responsive image">-->
+    <div class="rocky">
+        <div class="row align-items-center" style="height: 300px;">   
+            <div class="col">
+                <img src="{% static 'portfolio/images/profile_pic_rounded.png' %}" alt="" class="crop">
+            </div>         
+            <div class="col">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <br/><br/>
+                    <h1 class="text-left white-text">Hi, I'm Cameron</h1>
+                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/camwhite1301/">
+                            <img src="{% static 'portfolio/images/linkedin.png' %}" alt="" class="img-fluid zoom" style="max-width: 15%">
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/camwhite271">
+                            <img src="{% static 'portfolio/images/twitter.png' %}" alt="" class="zoom" style="max-width: 15%">
+                        </a>
+                        <a href="mailto:whiteceric@gmail.com">
+                            <img src="{% static 'portfolio/images/email.png' %}" alt="" class="zoom" style="max-width: 15%">
+                        </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <h1 class="text-right">About</h1>
+        </div>
+        <div class="col vl-left">
+            <p class="p-2">I'm a computer science student at MIT looking for a software engineering internship. My passions (besides coding) include writing, economics, teaching, and music. I believe in the power of discipline and I try to live a life guided by it.</p>
+        </div>
+    </div>
+
+    <br/><br/>
+    <div class="row align-items-center">
+        <div class="col-auto text-right vl-right">
+            <div class="emphasize rounded">
+                <h3>Java</h3>
+                <p class="p-2">Native language, 5+ years of experience. See more under 'Projects'</p>
+            </div>
+
+            <div class="emphasize rounded">
+                <h3>Python</h3>
+                <p class="p-2">The most fun, used daily (this website was made with Python).</p>
+            </div>
+            
+            <div class="emphasize rounded">
+                <h3>Web Development</h3>
+                <p class="p-2">Experience with the Django (Python) framework and deploying to Apache servers on Linux.</p>
+            </div>
+            
+            <div class="emphasize rounded">
+                <h3>Audio Production/Mixing</h3>
+                <p class="p-2">Produced music from 2016 to 2019, proficient in FL Studio 12.</p>
+            </div>            
+        </div>
+        <div class="col-md-4">
+            <h1>Skills</h1>
+        </div>
+    </div>
+
+    <br/><br/>
+    <h1 class="text-center">Projects</h1>  <br/> 
+    <div class="container list-group">
+        {% for project in object_list %}
+        <div class="list-group-item list-group-item-action">
+            <div class="code-style d-flex w-100 justify-content-between">
+                <h5><a href="#">{{ project.title }}</a></h5>
+                <small>{{ project.start_date|date:"F j, Y" }} - {{ project.end_date|date:"F j, Y" }}</small>
+            </div>       
+            <p class="mb-1" style="font-family: Georgia;">{{ project.description }}</p>
+            <small style="font-family: Georgia;"><a href="#">Link</a></small>
+            <br/>
+        </div>
+        <br/><br/>
+        {% endfor %}
+    </div>    
+    
+{% endblock %}
