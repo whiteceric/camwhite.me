@@ -77,7 +77,7 @@
         {% for project in object_list %}
         <div class="list-group-item list-group-item-action">
             <div class="code-style d-flex w-100 justify-content-between">
-                <h5><a href="#">{{ project.title }}</a></h5>
+                    <h5><a href="{% url 'project-detail' project.title|slugify %}">{{ project.title }}</a></h5>
                 <small>{{ project.start_date|date:"F j, Y" }} - {{ project.end_date|date:"F j, Y" }}</small>
             </div>       
             <p class="mb-1" style="font-family: Georgia;">{{ project.description }}</p>
