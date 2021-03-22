@@ -16,3 +16,13 @@ class ProjectView(DetailView):
 
     def get_object(self, **kwargs):
         return Project.objects.get(slugified_name=self.kwargs['slugified_name'])
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        with open(self.object.detail_source.path) as f:
+            content = ''
+            for line in f:
+                content += line + '\n'
+            context['body'] = content
+        return context

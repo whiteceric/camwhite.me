@@ -9,18 +9,21 @@
     <div class="container text-center">
         <h1 class="text-center">{{ project.title }}</h1>
         <br/>
-        <div>
-            <small>Start: {{ project.start_date|date:"F j, Y" }}</small><br/>
-            <small>End (Initial Deliverable/Beta): {{ project.end_date|date:"F j, Y" }}</small>
-        </div>
+        <small>Start: {{ project.start_date|date:"F j, Y" }}</small>
+        <br/>
+        <small>End (Initial Deliverable/Beta): {{ project.end_date|date:"F j, Y" }}</small>
+        <br/>        
         <a target="_blank" rel="noopener noreferrer" href={{ project.link }}>Link</a>
         <br/><br/>
+    </div>
+    <div>
+        <p> {{project.summary|safe}} </p>
     </div>
     
     <hr>
     <br/>
     </br>
     <div class="container" style="width: 80%">
-        {{ project.description|safe }}
+        {{ body|safe }}
     </div>  
 {% endblock %}
