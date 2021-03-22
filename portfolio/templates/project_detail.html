@@ -13,7 +13,9 @@
         <br/>
         <small>End (Initial Deliverable/Beta): {{ project.end_date|date:"F j, Y" }}</small>
         <br/>        
-        <a target="_blank" rel="noopener noreferrer" href={{ project.link }}>Link</a>
+        {% if project.link %}
+                <a target="_blank" rel="noopener noreferrer" href={{ project.link }}>Link</a>
+        {% endif %}
         <br/><br/>
     </div>
     <div>

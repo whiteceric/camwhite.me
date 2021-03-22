@@ -114,7 +114,9 @@
                 <small>{{ project.start_date|date:"F j, Y" }} - {{ project.end_date|date:"F j, Y" }}</small>
             </div>       
             <p class="mb-1" style="font-family: Georgia;">{{ project.summary }}</p>
-            <small style="font-family: Georgia;"><a target="_blank" rel="noopener noreferrer" href={{ project.link }}>Link</a></small>
+            {% if project.link %}
+                <small style="font-family: Georgia;"><a target="_blank" rel="noopener noreferrer" href={{ project.link }}>Link</a></small>
+            {% endif %}
                     <br/>
         </div>
         <br/><br/>

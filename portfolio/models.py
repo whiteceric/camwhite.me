@@ -24,7 +24,7 @@ class Project(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     summary = models.TextField()
-    link = models.CharField(max_length=255)
+    link = models.CharField(max_length=255, null=True, blank=True)
     detail_source = models.FileField(upload_to='project_detail_source', storage=custom_storage, null=True, blank=True, editable=False) 
 
     def save(self, *args, **kwargs):
