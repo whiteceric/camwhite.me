@@ -80,9 +80,9 @@
                     <h5><a href="{% url 'project-detail' project.title|slugify %}">{{ project.title }}</a></h5>
                 <small>{{ project.start_date|date:"F j, Y" }} - {{ project.end_date|date:"F j, Y" }}</small>
             </div>       
-            <p class="mb-1" style="font-family: Georgia;">{{ project.description }}</p>
-            <small style="font-family: Georgia;"><a href="#">Link</a></small>
-            <br/>
+            <p class="mb-1" style="font-family: Georgia;">{{ project.summary }}</p>
+            <small style="font-family: Georgia;"><a target="_blank" rel="noopener noreferrer" href={{ project.link }}>Link</a></small>
+                    <br/>
         </div>
         <br/><br/>
         {% endfor %}
