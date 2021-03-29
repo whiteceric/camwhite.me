@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Project
-from django.templatetags.static import static
+# from django.templatetags.static import static
+from django.conf import settings
 from django.http import HttpResponse
+import os
 
 # Create your views here.
 class HomeView(ListView):
@@ -30,7 +32,7 @@ class ProjectView(DetailView):
         return context
 
 def resume_view(request):
-    with open(static('portfolio/resume.pdf')[1:], 'rb') as pdf:
+    with open(os.path.join(settings.STATIC_ROOT, 'portfolio/resume.pdf'), 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=resume.pdf'
         return response
