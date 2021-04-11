@@ -23,16 +23,16 @@ const Header = () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="mailto:whiteceric@gmail.com"
+          href="https://github.com/whiteceric"
         >
-          <img alt="" src={email} className="link-pic" />
+          <img alt="" src={github} className="link-pic" />
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/whiteceric"
+          href="mailto:whiteceric@gmail.com"
         >
-          <img alt="" src={github} className="link-pic" />
+          <img alt="" src={email} className="link-pic" />
         </a>
       </div>
     </div>
