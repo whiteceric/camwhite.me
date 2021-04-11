@@ -1,0 +1,16 @@
+.NavBar {
+}
+
+.navbar-custom-bg {
+  background-color: #3259a8;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.navbar-link-item {
+  font-color: white;
+  font-size: 18pt;
+}
