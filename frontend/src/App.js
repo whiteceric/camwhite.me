@@ -27,12 +27,28 @@ function App() {
     }),
   ];
 
+  var tools = [
+    SkillListItem({
+      title: "Git",
+      text: "Used for version control in all software projects.",
+    }),
+    SkillListItem({
+      title: "Xcode",
+      text: "Used in iOS Development.",
+    }),
+    SkillListItem({
+      title: "Unix Terminal",
+      text: "Used to access remote servers.",
+    }),
+  ];
+
   return (
     <Router>
       <NavBar />
       <Header />
       <AboutSection text={text} />
-      <SkillList title="Skills" list_side="right" skills={skills} />
+      <SkillList title="Skills" list_side="left" skills={skills} />
+      <SkillList title="Tools I Use" list_side="right" skills={tools} />
     </Router>
   );
 }
