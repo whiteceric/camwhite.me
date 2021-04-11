@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
-import logo from "../../logo.png";
+import logo from "../../images/logo.png";
 
 const NavBar = () => (
   <div className="NavBar">
