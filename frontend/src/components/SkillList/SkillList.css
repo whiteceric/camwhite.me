@@ -1,0 +1,54 @@
+.SkillList {
+  margin-top: 100px;
+  margin-bottom: 0px;
+  margin-right: 200px;
+  margin-left: 200px;
+  justify-content: space-around;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-row-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.list-row-container.left {
+  grid-template-columns: 75% 25%;
+}
+
+.list-row-container.right {
+  grid-template-columns: 25% 75%;
+}
+
+.list-header {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.left .list-header {
+  border-left: 10px solid #3259a8;
+  text-align: left;
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+.right .list-header {
+  border-right: 10px solid #3259a8;
+  text-align: right;
+  margin-right: 10px;
+  padding-right: 20px;
+}
+
+.left .list-items {
+  text-align: right;
+}
+
+.right .list-items {
+  text-align: left;
+}
