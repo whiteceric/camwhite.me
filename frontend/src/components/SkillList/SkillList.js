@@ -5,7 +5,7 @@ import SkillListItem from "../SkillListItem/SkillListItem";
 
 const SkillList = ({ title, list_side, skills }) => (
   <div className="SkillList">
-    {list_side == "left" ? (
+    {list_side === "left" ? (
       <div className="list-row-container left">
         <div className="list-items">{skills}</div>
         <h1 className="list-header">{title}</h1>

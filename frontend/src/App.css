@@ -1,9 +1,4 @@
-.container {
-  margin: 100px;
-  justify-content: space-around;
-  height: 400px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.section-title {
+  text-align: center;
+  margin: 50px;
 }

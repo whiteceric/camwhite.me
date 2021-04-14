@@ -1,0 +1,39 @@
+.ProjectListItem {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  margin-left: 100px;
+  justify-content: space-around;
+
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #b5b5b5;
+  max-width: 1500px;
+  align: center;
+}
+
+.ProjectListItem:hover {
+  background-color: #eee;
+}
+
+.project-item-link:hover {
+  text-decoration: inherit;
+}
+
+.project-item-top-row {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.project-title {
+  font-size: 32px;
+}
+
+.dates-text {
+  text-align: right;
+  color: #8f8f8f;
+}
+
+.summary-text {
+  color: black;
+}
