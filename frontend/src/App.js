@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import AboutSection from "./components/AboutSection/AboutSection";
 import SkillList from "./components/SkillList/SkillList";
 import SkillListItem from "./components/SkillListItem/SkillListItem";
@@ -70,12 +71,21 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Header />
-      <AboutSection text={text} />
-      <SkillList title="Skills" list_side="left" skills={skills} />
-      <SkillList title="Tools I Use" list_side="right" skills={tools} />
-      <h1 className="section-title">Projects</h1>
-      {projects}
+      <Route
+        path="/"
+        exact
+        render={(props) => (
+          <>
+            <Header />
+            <AboutSection text={text} />
+            <SkillList title="Skills" list_side="left" skills={skills} />
+            <SkillList title="Tools I Use" list_side="right" skills={tools} />
+            <h1 className="section-title">Projects</h1>
+            {projects}
+          </>
+        )}
+      />
+      <Footer />
     </Router>
   );
 }

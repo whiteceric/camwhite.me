@@ -1,0 +1,27 @@
+.Footer {
+  border-top: solid 2px #eee;
+  height: 150px;
+}
+
+.footer-link-container {
+  margin: auto;
+  padding: 20px;
+  max-width: 300px;
+  position: center;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+}
+
+.footer-link-text {
+  cursor: pointer;
+  color: black;
+}
+
+.footer-link-text:hover {
+  color: #00f;
+  text-decoration: underline;
+  text-decoration-color: #00f;
+}
