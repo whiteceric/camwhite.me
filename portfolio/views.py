@@ -5,31 +5,17 @@ from django.conf import settings
 from django.http import HttpResponse
 import os
 
-# Create your views here.
-class HomeView(ListView):
-    model = Project
-    template_name = 'home.html'
-    
-def contact_view(request):
-    return render(request, 'contact.html', {})
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import ProjectSerializer
 
-class ProjectView(DetailView):
-    model = Project
-    template_name = 'project_detail.html'
+@api_view(['GET'])
+def project_list(request):
+    projects = Project.objects.all()
+    serializer = ProjectSerializer(projects, many=True)
+    return Response(serializer.data)
 
-    def get_object(self, **kwargs):
-        return Project.objects.get(slugified_name=self.kwargs['slugified_name'])
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-
-        with open(self.object.detail_source.path) as f:
-            content = ''
-            for line in f:
-                content += line + '\n'
-            context['body'] = content
-        return context
-
+# might keep, dunno if I can use django views still (with React)
 def resume_view(request):
     with open(os.path.join(settings.STATIC_ROOT, 'portfolio/resume.pdf'), 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')

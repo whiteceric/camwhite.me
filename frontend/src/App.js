@@ -7,8 +7,11 @@ import AboutSection from "./components/AboutSection/AboutSection";
 import SkillList from "./components/SkillList/SkillList";
 import SkillListItem from "./components/SkillListItem/SkillListItem";
 import ProjectListItem from "./components/ProjectListItem/ProjectListItem";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [projects, setProjects] = useState([]);
+
   var text =
     "I'm a computer science student at MIT looking for a software engineering internship. My passions (besides coding) include writing, economics, teaching, and music. I believe in the power of discipline and I try to live a life guided by it.";
 
@@ -44,26 +47,18 @@ function App() {
     }),
   ];
 
-  var projects = [
-    ProjectListItem({
-      title: "camwhite.me",
-      title_href: "camwhite.me",
-      dates: "february 25, 2021 - february 27, 2021",
-      summary: { summary },
-      link: "camwhite.me",
-      summary:
-        '(this website!) a personal resume-type website for recording projects and tracking skills/tools i\'ve learned. back-end written in python using django framework. "projects" database managed with sqlite3. front-end developed with html and css. site is deployed on a remote linux server running ubuntu and managed with ssh. git used for version control.',
-    }),
-    ProjectListItem({
-      title: "camwhite.me",
-      title_href: "camwhite.me",
-      dates: "february 25, 2021 - february 27, 2021",
-      summary: { summary },
-      link: "camwhite.me",
-      summary:
-        '(this website!) a personal resume-type website for recording projects and tracking skills/tools i\'ve learned. back-end written in python using django framework. "projects" database managed with sqlite3. front-end developed with html and css. site is deployed on a remote linux server running ubuntu and managed with ssh. git used for version control.',
-    }),
-  ];
+  function fetchProjects() {
+    console.log("Fetching...");
+
+    fetch("http://127.0.0.1:8000/api/project-list/")
+      .then((response) => response.json())
+      .then((data) => setProjects(data));
+    console.log(projects);
+  }
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
   var summary =
     '(This website!) A personal resume-type website for recording projects and tracking skills/tools I\'ve learned. Back-end written in Python using Django framework. "Projects" database managed with SQLite3. Front-end developed with HTML and CSS. Site is deployed on a remote Linux server running Ubuntu and managed with SSH. Git used for version control.';
@@ -81,7 +76,17 @@ function App() {
             <SkillList title="Skills" list_side="left" skills={skills} />
             <SkillList title="Tools I Use" list_side="right" skills={tools} />
             <h1 className="section-title">Projects</h1>
-            {projects}
+            {projects.map(function (project, index) {
+              return (
+                <ProjectListItem
+                  title={project.title}
+                  title_href="#"
+                  dates={`${project.start_date} to ${project.end_date}`}
+                  summary={project.summary}
+                  link={project.link}
+                />
+              );
+            })}
           </>
         )}
       />
