@@ -1,7 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./SkillListItem.css";
-import { useState } from "react";
 
 // {open ? <p className="skill-text">{text}</p> : <p></p>}
 const SkillListItem = ({ title, text }) => (

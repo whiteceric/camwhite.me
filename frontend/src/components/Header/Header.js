@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./Header.css";
 
 import profile_pic_rounded from "../../images/profile_pic_rounded.png";

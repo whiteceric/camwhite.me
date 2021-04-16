@@ -4,7 +4,7 @@ from .models import Project
 from django.conf import settings
 from django.http import HttpResponse
 import os
-
+import json
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import ProjectSerializer
@@ -15,6 +15,11 @@ def project_list(request):
     serializer = ProjectSerializer(projects, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def bio(request):
+    with open(os.path.join(settings.STATIC_ROOT, 'portfolio/bio.json'), 'rb') as bio_json:
+        bio_json = json.load(bio_json)
+        return Response(bio_json)
 # might keep, dunno if I can use django views still (with React)
 def resume_view(request):
     with open(os.path.join(settings.STATIC_ROOT, 'portfolio/resume.pdf'), 'rb') as pdf:
