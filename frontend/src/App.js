@@ -60,9 +60,6 @@ function App() {
     fetchProjects();
   }, []);
 
-  var summary =
-    '(This website!) A personal resume-type website for recording projects and tracking skills/tools I\'ve learned. Back-end written in Python using Django framework. "Projects" database managed with SQLite3. Front-end developed with HTML and CSS. Site is deployed on a remote Linux server running Ubuntu and managed with SSH. Git used for version control.';
-
   return (
     <Router>
       <NavBar />
@@ -78,13 +75,15 @@ function App() {
             <h1 className="section-title">Projects</h1>
             {projects.map(function (project, index) {
               return (
-                <ProjectListItem
-                  title={project.title}
-                  title_href="#"
-                  dates={`${project.start_date} to ${project.end_date}`}
-                  summary={project.summary}
-                  link={project.link}
-                />
+                <div key={index}>
+                  <ProjectListItem
+                    title={project.title}
+                    title_href="#"
+                    dates={`${project.start_date} to ${project.end_date}`}
+                    summary={project.summary}
+                    link={project.link}
+                  />
+                </div>
               );
             })}
           </>
