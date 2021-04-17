@@ -1,4 +1,8 @@
 .NavBar {
+  background-color: #3259a8;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
 
 .navbar-custom-bg {
@@ -6,8 +10,16 @@
 }
 
 .logo {
-  width: 150px;
+  width: 165px;
   height: auto;
+  padding: 10px;
+}
+
+.navbar-links {
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: right;
 }
 
 .navbar-link-item {
@@ -15,6 +27,7 @@
   font-size: 18pt;
   background: none;
   border: none;
+  margin: 10px;
 }
 
 .navbar-link-item:hover {
