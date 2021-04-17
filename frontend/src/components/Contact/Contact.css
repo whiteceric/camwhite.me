@@ -1,1 +1,8 @@
-.Contact {}
+.Contact {
+}
+
+.contact-link-title {
+  text-align: center;
+  margin: 50px;
+}
+
