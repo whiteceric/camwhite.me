@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./Contact.css";
 
 const Contact = () => (
@@ -11,19 +10,27 @@ const Contact = () => (
     </h2>
     <h2 className="contact-link-title">
       Twitter -{" "}
-      <a target="_blank" href="https://twitter.com/camwhite271">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://twitter.com/camwhite271"
+      >
         @camwhite271
       </a>
     </h2>
     <h2 className="contact-link-title">
       LinkedIn -{" "}
-      <a target="_blank" href="https://www.linkedin.com/in/camwhite1301/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.linkedin.com/in/camwhite1301/"
+      >
         camwhite1301
       </a>
     </h2>
     <h2 className="contact-link-title">
       GitHub -{" "}
-      <a target="_blank" href="https://github.com/whiteceric">
+      <a target="_blank" rel="noreferrer" href="https://github.com/whiteceric">
         whiteceric
       </a>
     </h2>

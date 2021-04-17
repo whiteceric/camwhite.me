@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import HttpResponse
 import os
 import json
+from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import ProjectSerializer
@@ -14,6 +15,15 @@ def project_list(request):
     projects = Project.objects.all()
     serializer = ProjectSerializer(projects, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def project_detail(request, slugified_name):
+    try:
+        project = Project.objects.get(slugified_name=slugified_name)
+        serializer = ProjectSerializer(project, many=False)
+        return Response(serializer.data)
+    except Project.DoesNotExist as e:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def bio(request):

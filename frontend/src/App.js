@@ -5,18 +5,15 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AboutSection from "./components/AboutSection/AboutSection";
 import SkillList from "./components/SkillList/SkillList";
-import SkillListItem from "./components/SkillListItem/SkillListItem";
 import Contact from "./components/Contact/Contact";
 import ProjectListItem from "./components/ProjectListItem/ProjectListItem";
-import { useState, useEffect } from "react";
+import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
 import { useFetch } from "./components/useFetch";
 
 function App() {
   const projects = useFetch("http://127.0.0.1:8000/api/project-list/");
   const bio = useFetch("http://127.0.0.1:8000/api/bio/");
 
-  var skills = [];
-  var tools = [];
   return (
     <Router>
       <NavBar />
@@ -43,7 +40,7 @@ function App() {
                 <div key={index}>
                   <ProjectListItem
                     title={project.title}
-                    title_href="#"
+                    title_href={`/project/${project.slugified_name}`}
                     dates={`${project.start_date} to ${project.end_date}`}
                     summary={project.summary}
                     link={project.link}
@@ -55,6 +52,7 @@ function App() {
         )}
       />
       <Route path="/contact" exact render={(props) => <Contact />} />
+      <Route path="/project/:slugified_title" children={<ProjectDetail />} />
       <Footer />
     </Router>
   );

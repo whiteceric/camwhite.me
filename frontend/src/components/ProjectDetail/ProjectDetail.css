@@ -1,0 +1,42 @@
+.ProjectDetail {
+}
+
+.project-detail-header-centered {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.project-detail-summary {
+  margin-left: 100px;
+  margin-right: 100px;
+  max-width: 960px;
+}
+
+@media only screen and (min-width: 1060px) {
+  .project-detail-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.project-detail-container {
+  display: flex;
+  justify-content: center;
+}
+
+.project-detail-text {
+  margin-left: 200px;
+  margin-right: 200px;
+  max-width: 600px;
+}
+
+.project-detail-text h1 {
+  margin-top: 50px;
+}
+
+@media only screen and (min-width: 1060px) {
+  .project-detail-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
