@@ -12,9 +12,7 @@ const importDetail = (slugified_name) =>
 const ProjectDetail = () => {
   const { slugified_title } = useParams();
   // fetch the project json from backend api
-  const project = useFetch(
-    `http://127.0.0.1:8000/api/project/${slugified_title}`
-  );
+  const project = useFetch(`api/project/${slugified_title}`);
   console.log(project);
 
   // for date conversion

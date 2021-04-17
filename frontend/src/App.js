@@ -11,8 +11,8 @@ import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
 import { useFetch } from "./components/useFetch";
 
 function App() {
-  const projects = useFetch("http://127.0.0.1:8000/api/project-list/");
-  const bio = useFetch("http://127.0.0.1:8000/api/bio/");
+  const projects = useFetch("api/project-list/");
+  const bio = useFetch("api/bio/");
   console.log(bio);
 
   const options = { year: "numeric", month: "long", day: "numeric" };
