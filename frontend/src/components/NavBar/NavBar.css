@@ -13,6 +13,8 @@
 .navbar-link-item {
   color: white;
   font-size: 18pt;
+  background: none;
+  border: none;
 }
 
 .navbar-link-item:hover {
