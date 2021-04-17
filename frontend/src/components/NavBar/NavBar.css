@@ -11,6 +11,11 @@
 }
 
 .navbar-link-item {
-  font-color: white;
+  color: white;
   font-size: 18pt;
+}
+
+.navbar-link-item:hover {
+  color: white;
+  text-decoration: none;
 }

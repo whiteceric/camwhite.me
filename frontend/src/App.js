@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import AboutSection from "./components/AboutSection/AboutSection";
 import SkillList from "./components/SkillList/SkillList";
 import SkillListItem from "./components/SkillListItem/SkillListItem";
+import Contact from "./components/Contact/Contact";
 import ProjectListItem from "./components/ProjectListItem/ProjectListItem";
 import { useState, useEffect } from "react";
 import { useFetch } from "./components/useFetch";
@@ -53,6 +54,7 @@ function App() {
           </>
         )}
       />
+      <Route path="/contact" exact render={(props) => <Contact />} />
       <Footer />
     </Router>
   );
