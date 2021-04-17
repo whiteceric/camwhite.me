@@ -11,10 +11,15 @@ const importDetail = (slugified_name) =>
 
 const ProjectDetail = () => {
   const { slugified_title } = useParams();
+  // fetch the project json from backend api
   const project = useFetch(
     `http://127.0.0.1:8000/api/project/${slugified_title}`
   );
   console.log(project);
+
+  // for date conversion
+  const options = { year: "numeric", month: "long", day: "numeric" };
+
   const DetailComponent = importDetail(project.slugified_name);
 
   return (
@@ -22,9 +27,21 @@ const ProjectDetail = () => {
       <div className="project-detail-header">
         <h1 className="section-title">{project.title}</h1>
         <div className="project-detail-header-centered">
-          <small>Start: {project.start_date}</small>
+          <small>
+            Start:{" "}
+            {`${new Date(project.start_date + " 00:00").toLocaleDateString(
+              "en-US",
+              options
+            )}`}
+          </small>
           <br />
-          <small>Initial Deliverable/Beta: {project.end_date}</small>
+          <small>
+            Initial Deliverable/Beta:{" "}
+            {`${new Date(project.end_date + " 00:00").toLocaleDateString(
+              "en-US",
+              options
+            )}`}
+          </small>
           {project.link !== "" ? (
             <a target="_blank" rel="noreferrer" href={project.link}>
               <p className="project-detail-link-text">Link</p>

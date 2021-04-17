@@ -19,6 +19,9 @@ try:
 except:
     config = {'SECRET_KEY': None}
 
+def _join(pre, *toks):
+    return pre if not toks else _join(os.path.join(pre, toks[0]), *toks[1:])
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -65,7 +68,7 @@ ROOT_URLCONF = 'personal_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [_join(BASE_DIR, 'frontend', 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,11 +133,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# React static files
+STATICFILES_DIRS = [
+    _join(BASE_DIR, 'frontend', 'build', 'static'),
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-def _join(pre, *toks):
-    return pre if not toks else _join(os.path.join(pre, toks[0]), *toks[1:])
 PROJECT_DETAIL_ROOT = _join(BASE_DIR, 'frontend', 'src', 'components', 'ProjectDetail')
 
 CORS_ORIGIN_WHITELIST = [
