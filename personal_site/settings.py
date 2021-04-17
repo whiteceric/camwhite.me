@@ -133,6 +133,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+def _join(pre, *toks):
+    return pre if not toks else _join(os.path.join(pre, toks[0]), *toks[1:])
+PROJECT_DETAIL_ROOT = _join(BASE_DIR, 'frontend', 'src', 'components', 'ProjectDetail')
+
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",

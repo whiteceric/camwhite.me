@@ -34,6 +34,10 @@
   font-size: 32px;
 }
 
+.project-title:hover {
+  text-decoration: underline;
+}
+
 .dates-text {
   text-align: right;
   color: #8f8f8f;

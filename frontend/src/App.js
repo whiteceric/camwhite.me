@@ -14,6 +14,8 @@ function App() {
   const projects = useFetch("http://127.0.0.1:8000/api/project-list/");
   const bio = useFetch("http://127.0.0.1:8000/api/bio/");
 
+  const options = { year: "numeric", month: "long", day: "numeric" };
+
   return (
     <Router>
       <NavBar />
@@ -41,7 +43,11 @@ function App() {
                   <ProjectListItem
                     title={project.title}
                     title_href={`/project/${project.slugified_name}`}
-                    dates={`${project.start_date} to ${project.end_date}`}
+                    dates={`${new Date(
+                      project.start_date + " 00:00"
+                    ).toLocaleDateString("en-US", options)} to ${new Date(
+                      project.end_date + " 00:00"
+                    ).toLocaleDateString("en-US", options)}`}
                     summary={project.summary}
                     link={project.link}
                   />
