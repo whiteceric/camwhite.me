@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-const rootURL = "http://www.camwhite.me/";
+import { API_URL } from "../env";
 
 export const useFetch = (url) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(rootURL + url);
-    fetch(rootURL + url)
+    console.log(API_URL + url);
+    fetch(API_URL + url)
       .then((response) => response.json())
       .then((_data) => setData(_data));
   }, [url]);

@@ -13,18 +13,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import json
-try:
-    with open('/etc/config.json') as config_file:
-        config = json.load(config_file)
-except:
-    config = {'SECRET_KEY': None}
-
-def _join(pre, *toks):
-    return pre if not toks else _join(os.path.join(pre, toks[0]), *toks[1:])
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+def _join(pre, *toks):
+    return pre if not toks else _join(os.path.join(pre, toks[0]), *toks[1:])
+
+# load settings from environment variables
+config = {
+    "DEBUG": os.environ.get("CAMWHITE_ME_DEBUG", False) == "True",
+    "SECRET_KEY": os.environ.get("CAMWHITE_ME_SECRET_KEY", None),
+    "DB_PATH": os.environ.get("CAMWHITE_ME_DB_PATH", _join(BASE_DIR, 'db.sqlite3'))
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -33,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config["DEBUG"]
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'camwhite.me', 'www.camwhite.me', '45.79.2.154']
 
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'personal_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': config["DB_PATH"],
     }
 }
 
