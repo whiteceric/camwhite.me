@@ -1,6 +1,5 @@
 venv
 env
-db.sqlite3
 .vim
 .DS_Store
 build
