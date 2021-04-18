@@ -1,15 +1,18 @@
 {
-  "ABOUT": "I'm a computer science student at MIT looking for a software engineering internship. My passions (besides coding) include writing, economics, teaching, and music. I believe in the power of discipline and I try to live a life guided by it.",
+  "ABOUT": "I'm a computer science student at MIT looking for a career in software engineering. I have experience in developing full stack projects like websites and mobile apps and am always looking to learn more. My passions (besides coding) include writing, economics, teaching, and music. I believe in the power of discipline and I try to live a life guided by it.",
   "SKILLS": {
-    "Java": "Native language, 5+ years of experience. See more under 'Projects'",
+    "Java": "Native language, 5+ years of experience.",
     "Python": "The most fun, used daily (this website was made with Python).",
-    "Web Development": "Experience with the Django (Python) framework, HTML and CSS",
+    "Django": "Experience building REST APIs full stack apps.",
+    "React": "Used in web projects like this one to handle entire frontend.",
+    "HTML/CSS": "When React isn't used, HTML + Django is the go to. CSS used to style with React and Django.",
     "Audio Production/Mixing": "Produced music from 2016 to 2019, proficient in FL Studio 12."
   },
   "TOOLS": {
     "Git": "Used for version control in all software projects.",
     "Xcode": "Used in iOS Development.",
-    "Unix Terminal": "Preferred terminal, I've used Windows but don't like it.",
+    "Node.js": "Used with React.",
+    "Unix Terminal": "Preferred terminal, used in remote server deployments",
     "SSH": "Used to access remote servers."
   }
 }
