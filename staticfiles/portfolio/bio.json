@@ -1,0 +1,15 @@
+{
+  "ABOUT": "I'm a computer science student at MIT looking for a software engineering internship. My passions (besides coding) include writing, economics, teaching, and music. I believe in the power of discipline and I try to live a life guided by it.",
+  "SKILLS": {
+    "Java": "Native language, 5+ years of experience. See more under 'Projects'",
+    "Python": "The most fun, used daily (this website was made with Python).",
+    "Web Development": "Experience with the Django (Python) framework, HTML and CSS",
+    "Audio Production/Mixing": "Produced music from 2016 to 2019, proficient in FL Studio 12."
+  },
+  "TOOLS": {
+    "Git": "Used for version control in all software projects.",
+    "Xcode": "Used in iOS Development.",
+    "Unix Terminal": "Preferred terminal, I've used Windows but don't like it.",
+    "SSH": "Used to access remote servers."
+  }
+}

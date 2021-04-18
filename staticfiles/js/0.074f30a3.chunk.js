@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[0],{17:function(e,t,n){"use strict";n.r(t);n(1);var s=n(0);t.default=function(){return Object(s.jsx)("div",{className:"project-detail-text",children:Object(s.jsx)("h1",{children:"More Details Coming Soon!"})})}}}]);
+//# sourceMappingURL=0.074f30a3.chunk.js.map

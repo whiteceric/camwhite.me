@@ -25,7 +25,7 @@ from django.urls import re_path, path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('portfolio.urls')),
-    re_path('^(?!(api))', TemplateView.as_view(template_name='index.html')), # only send urls that dont begin with 'api' to React
+    re_path('^(?!((api)|(admin)))', TemplateView.as_view(template_name='index.html')), # only send urls that dont begin with 'api' to React
 ]
 
 if settings.DEBUG:
