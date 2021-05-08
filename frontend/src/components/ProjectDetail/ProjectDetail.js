@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../useFetch";
+import { formatDate } from "../formatDate";
 import "./ProjectDetail.css";
 
 // function to load a given component from the ProjectDetail directory dynamically
@@ -26,19 +27,12 @@ const ProjectDetail = () => {
         <h1 className="section-title">{project.title}</h1>
         <div className="project-detail-header-centered">
           <small>
-            Start:{" "}
-            {`${new Date(project.start_date + " 00:00").toLocaleDateString(
-              "en-US",
-              options
-            )}`}
+            Start: {project.start_date ? formatDate(project.start_date) : ""}
           </small>
           <br />
           <small>
-            Initial Deliverable/Beta:{" "}
-            {`${new Date(project.end_date + " 00:00").toLocaleDateString(
-              "en-US",
-              options
-            )}`}
+            Initial Deliverable:{" "}
+            {project.end_date ? formatDate(project.end_date) : ""}
           </small>
           {project.link !== "" ? (
             <a target="_blank" rel="noreferrer" href={project.link}>

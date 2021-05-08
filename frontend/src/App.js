@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import ProjectListItem from "./components/ProjectListItem/ProjectListItem";
 import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
 import { useFetch } from "./components/useFetch";
+import { formatDate } from "./components/formatDate";
 
 function App() {
   const projects = useFetch("api/project-list/");
@@ -44,11 +45,11 @@ function App() {
                   <ProjectListItem
                     title={project.title}
                     title_href={`/project/${project.slugified_name}`}
-                    dates={`${new Date(
-                      project.start_date + " 00:00"
-                    ).toLocaleDateString("en-US", options)} to ${new Date(
-                      project.end_date + " 00:00"
-                    ).toLocaleDateString("en-US", options)}`}
+                    dates={
+                      formatDate(project.start_date) +
+                      " to " +
+                      formatDate(project.end_date)
+                    }
                     summary={project.summary}
                     link={project.link}
                   />
