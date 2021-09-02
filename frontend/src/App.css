@@ -4,10 +4,22 @@
   margin-bottom: 0px;
 }
 
+@keyframes bob {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .page-content {
   background: url("images/space_mountain.jpeg") no-repeat center center / cover;
-
-  height: 1080px;
+  background-attachment: fixed;
+  background-position: top;
 
   display: flex;
   flex-direction: column;
@@ -32,24 +44,12 @@
   margin: 20px;
   padding: 20px;
   color: white;
-  max-width: 876px;
+  width: 876px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-@keyframes bob {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .list-item:hover {

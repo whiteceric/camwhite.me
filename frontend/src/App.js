@@ -36,6 +36,10 @@ function App() {
                 portfolio and resume!
               </p>
             </Link>
+            <Link className="list-item" to="/contact">
+              <h1>Contact</h1>
+              <p>Get in contact with me for any other questions!</p>
+            </Link>
           </div>
         )}
       />

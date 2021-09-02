@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo_3.png";
 import resume_pdf from "../../static/resume.pdf";
 
-const NavBar = (link_pdf_resume) => {
+const NavBar = () => {
   const openResume = () => {
     window.open(resume_pdf);
   };
