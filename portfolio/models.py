@@ -32,3 +32,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+class WebDevContact(models.Model):
+    class WebDevWorkTypes(models.TextChoices):
+        FULL_STACK = 'Full Stack (entire web application)'
+        FRONTEND = 'Front End (user facing features)'
+        BACKEND = 'Back End (new site functionality and database features)'
+
+    email = models.EmailField()
+    work_type = models.CharField(max_length=64, choices=WebDevWorkTypes.choices)
+    business_description = models.TextField()
+    project_description = models.TextField()
