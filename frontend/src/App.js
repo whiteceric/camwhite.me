@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
@@ -21,22 +21,21 @@ function App() {
         render={(props) => (
           <div className="page-content">
             <img alt="" src={logo} className="list-title" />
-            <div className="list-item">
-              <h1 className="list-item-title">Web Development</h1>
-              <p className="list-item-body">
-                I build high quality websites <a href="#">(full stack)</a> for
-                startups, small businesses and agencies. Contact me to get
-                started!
+            <Link className="list-item" to="/resume">
+              <h1>Web Development</h1>
+              <p>
+                I build high quality websites (full stack) for startups, small
+                businesses and agencies. Contact me to get started!
               </p>
-            </div>
-            <div className="list-item">
-              <h1 className="list-item-title">Web Development</h1>
-              <p className="list-item-body">
-                I build high quality websites <a href="#">(full stack)</a> for
-                startups, small businesses and agencies. Contact me to get
-                started!
+            </Link>
+            <Link className="list-item" to="/resume">
+              <h1>Software Engineering</h1>
+              <p>
+                I am a current computer science student looking for
+                opportunities in the field of software engineering. Check out my
+                portfolio and resume!
               </p>
-            </div>
+            </Link>
           </div>
         )}
       />
