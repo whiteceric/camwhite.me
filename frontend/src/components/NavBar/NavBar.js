@@ -34,8 +34,6 @@ const NavBar = (link_pdf_resume) => {
 
 NavBar.propTypes = {};
 
-NavBar.defaultProps = {
-  link_pdf_resume: false,
-};
+NavBar.defaultProps = {};
 
 export default NavBar;

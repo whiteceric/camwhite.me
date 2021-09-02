@@ -1,14 +1,14 @@
 .Footer {
-  margin-top: 50px;
-  border-top: solid 2px #eee;
+  background: black;
+  padding-top: 50px;
   height: 150px;
 }
 
 .footer-link-container {
   margin: auto;
   padding: 20px;
-  max-width: 300px;
   position: center;
+  border-top: solid 2px white;
 
   display: grid;
   justify-content: center;
@@ -18,7 +18,7 @@
 
 .footer-link-text {
   cursor: pointer;
-  color: black;
+  color: white;
 }
 
 .footer-link-text:hover {

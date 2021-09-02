@@ -3,3 +3,30 @@
   margin: 50px;
   margin-bottom: 0px;
 }
+
+.page-content {
+  background: url("images/space_mountain.jpeg") no-repeat center center / cover;
+
+  height: 1080px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
+
+.list-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  height: 400px;
+}
+
+.list-item {
+}
+
+.list-item-title {
+}
+
+.list-item-body {
+}
