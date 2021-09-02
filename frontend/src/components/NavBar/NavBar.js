@@ -9,13 +9,17 @@ const NavBar = (link_pdf_resume) => {
   const openResume = () => {
     window.open(resume_pdf);
   };
+  const location = useLocation();
+  if (location.pathname == "/") {
+    return null;
+  }
   return (
     <div className="NavBar">
       <Link to="/">
         <img alt="" src={logo} className="logo" />
       </Link>
       <div className="navbar-links">
-        {useLocation().pathname == "/resume" ? (
+        {location.pathname == "/resume" ? (
           <button className="navbar-link-item" onClick={openResume}>
             Resume (PDF)
           </button>

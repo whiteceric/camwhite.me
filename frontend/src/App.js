@@ -25,7 +25,7 @@ function App() {
               <h1>Web Development</h1>
               <p>
                 I build high quality websites (full stack) for startups, small
-                businesses and agencies. Contact me to get started!
+                businesses, and agencies. Contact me to get started!
               </p>
             </Link>
             <Link className="list-item" to="/resume">
