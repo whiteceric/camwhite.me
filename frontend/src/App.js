@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import ResumePage from "./components/ResumePage/ResumePage";
+import WebDevPage from "./components/WebDevPage/WebDevPage";
 import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
 import logo from "./images/logo_3.png";
 import { useFetch } from "./components/useFetch";
@@ -21,7 +22,7 @@ function App() {
         render={(props) => (
           <div className="page-content">
             <img alt="" src={logo} className="list-title" />
-            <Link className="list-item" to="/resume">
+            <Link className="list-item" to="/webdev">
               <h1>Web Development</h1>
               <p>
                 I build high quality websites (full stack) for startups, small
@@ -44,6 +45,7 @@ function App() {
         )}
       />
       <Route path="/resume" exact render={(props) => <ResumePage />} />
+      <Route path="/webdev" exact render={(props) => <WebDevPage />} />
       <Route path="/contact" exact render={(props) => <Contact />} />
       <Route path="/project/:slugified_title" children={<ProjectDetail />} />
       <Footer />

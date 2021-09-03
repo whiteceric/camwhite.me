@@ -19,6 +19,12 @@ const NavBar = () => {
         <img alt="" src={logo} className="logo" />
       </Link>
       <div className="navbar-links">
+        <Link className="navbar-link-item" to="/">
+          Home
+        </Link>
+        <Link className="navbar-link-item" to="/webdev">
+          Web Dev
+        </Link>
         {location.pathname == "/resume" ? (
           <button className="navbar-link-item" onClick={openResume}>
             Resume (PDF)
