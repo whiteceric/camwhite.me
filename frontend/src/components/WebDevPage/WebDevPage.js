@@ -1,23 +1,6 @@
 import React, { useState } from "react";
 import "./WebDevPage.css";
 import { API_URL } from "../../env";
-import CSRFToken from "../CSRFToken";
-
-function getCookie(name) {
-  var cookieValue = null;
-  if (document.cookie && document.cookie !== "") {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].trim();
-      if (cookie.substring(0, name.length + 1) === name + "=") {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-  return cookieValue;
-}
-const csrftoken = getCookie("csrftoken");
 
 const WebDevPage = () => {
   const [email, setEmail] = useState(null);
@@ -25,9 +8,6 @@ const WebDevPage = () => {
   const [body, setBody] = useState(null);
 
   const formSubmitted = (event) => {
-    console.log(email);
-    console.log(name);
-    console.log(body);
     const url = "api/new-web-dev-contact/";
     const requestOptions = {
       method: "POST",
@@ -38,8 +18,7 @@ const WebDevPage = () => {
         body: body,
       }),
     };
-    fetch(API_URL + url, requestOptions).then((response) => response.json());
-
+    fetch(API_URL + url, requestOptions);
     event.preventDefault();
   };
 

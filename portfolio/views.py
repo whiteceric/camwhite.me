@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Project
+from .models import Project, WebDevContact
 from django.conf import settings
 from django.http import HttpResponse
 import os
@@ -35,5 +35,12 @@ def bio(request):
 
 @api_view(['POST'])
 def new_web_dev_contact(request):
-    print(request.data)
+    data = request.data
+    if type(data) is not dict:
+        return Response('WebDevContact data should be sent as')
+    elif set(data.keys()) != {'email', 'name', 'body'}:
+        return Response('Incorrect WebDevContact Keys')
+    contact = WebDevContact(**data)
+    contact.save()
+    contact.send()
     return Response(request.data)

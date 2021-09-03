@@ -37,3 +37,12 @@ class WebDevContact(models.Model):
     email = models.EmailField()
     name = models.TextField()
     body = models.TextField()
+
+    def send(self):
+        '''
+        Send this email to myself
+        '''
+        print("Sending...")
+
+    def __str__(self):
+        return self.email
