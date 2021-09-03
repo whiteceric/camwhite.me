@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import ResumePage from "./components/ResumePage/ResumePage";
 import WebDevPage from "./components/WebDevPage/WebDevPage";
+import ThankYouPage from "./components/ThankYouPage/ThankYouPage";
 import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
 import logo from "./images/logo_3.png";
 import { useFetch } from "./components/useFetch";
@@ -46,6 +47,11 @@ function App() {
       />
       <Route path="/resume" exact render={(props) => <ResumePage />} />
       <Route path="/webdev" exact render={(props) => <WebDevPage />} />
+      <Route
+        path="/webdev/thankyou"
+        exact
+        render={(props) => <ThankYouPage />}
+      />
       <Route path="/contact" exact render={(props) => <Contact />} />
       <Route path="/project/:slugified_title" children={<ProjectDetail />} />
       <Footer />

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
+import { Redirect } from "react-router-dom";
 import "./WebDevPage.css";
 import { API_URL } from "../../env";
 
@@ -6,6 +7,7 @@ const WebDevPage = () => {
   const [email, setEmail] = useState(null);
   const [name, setName] = useState(null);
   const [body, setBody] = useState(null);
+  const [sent, setSent] = useState(false);
 
   const formSubmitted = (event) => {
     const url = "api/new-web-dev-contact/";
@@ -20,8 +22,16 @@ const WebDevPage = () => {
     };
     fetch(API_URL + url, requestOptions);
     event.preventDefault();
+    setSent(true);
   };
 
+  if (sent) {
+    return (
+      <Fragment>
+        <Redirect to="/webdev/thankyou" />
+      </Fragment>
+    );
+  }
   return (
     <div className="form-container">
       <form className="form" onSubmit={formSubmitted}>

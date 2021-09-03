@@ -1,0 +1,17 @@
+.ThankYouPage {
+  background: url("../../images/space_mountain.jpeg") no-repeat center center /
+    cover;
+  background-attachment: fixed;
+  background-position: top;
+
+  height: 1028px;
+  display: flex;
+  justify-content: center;
+}
+
+.ThankYouPage h1 {
+  margin-top: 250px;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
