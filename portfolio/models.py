@@ -38,16 +38,18 @@ class WebDevContact(models.Model):
     email = models.EmailField()
     name = models.TextField()
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
     def send(self):
         '''
         Send this email to myself
         '''
-        print("Sending...")
+        subject = f'{self.name} sent a message via camwhite.me'
+        message = f'{subject}\nSent at: {self.created}\n\nMessage:\n{self.body}\n\nEmail:{self.email}'
         send_mail(
-            self.name, # subject
-            self.body, # body
-            self.email, # from
+            subject, # subject
+            message, # body
+            settings.EMAIL_HOST_USER, # from
             ['contact@camwhite.me'], # to
         )
 
