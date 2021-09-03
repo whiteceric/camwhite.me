@@ -1,0 +1,76 @@
+.WebDevPage {
+}
+
+.form-container {
+  background: url("../../images/space_mountain.jpeg") no-repeat center center /
+    cover;
+  background-attachment: fixed;
+  background-position: top;
+
+  height: 1028px;
+}
+
+.form {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+
+.form h1 {
+  margin: 150px;
+  margin-bottom: 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.form h2 {
+  color: white;
+  border-top: solid 5px white;
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.text-input {
+  background-color: #171a21;
+  justify-content: space-around;
+  margin: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 400px;
+
+  color: white;
+  font-family: courier;
+}
+
+.text-input textarea {
+  height: 200px;
+}
+
+.form input[type="submit"] {
+  background-color: transparent;
+  margin-top: 10px;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, transparent 50%, #5856d6 50%);
+  -webkit-transition: background-position 0.3s;
+  -moz-transition: background-position 0.3s;
+  transition: background-position 0.3s;
+
+  color: white;
+  border: solid 4px white;
+  width: 100%;
+  max-width: 150px;
+  height: 60px;
+}
+
+.form input[type="submit"]:hover {
+  background-position: -100% 0%;
+  border: solid 4px black;
+  text-decoration: none;
+  color: white;
+  animation: bob 1s ease-in-out infinite;
+}

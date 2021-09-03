@@ -1,5 +1,6 @@
 venv
 env
+.env
 .vim
 .DS_Store
 build
