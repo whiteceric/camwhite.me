@@ -7,6 +7,7 @@ import os
 import json
 from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import ProjectSerializer
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
@@ -32,8 +33,7 @@ def bio(request):
         bio_json = json.load(bio_json)
         return Response(bio_json)
 
-#@ensure_csrf_cookie
 @api_view(['POST'])
-@csrf_exempt
-def new_web_dev_contact(request, data):
-    print(data)
+def new_web_dev_contact(request):
+    print(request.data)
+    return Response(request.data)
