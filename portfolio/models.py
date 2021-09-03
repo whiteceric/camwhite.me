@@ -4,6 +4,7 @@ from shutil import copy
 from django.conf import settings
 from django.core.files import File
 from django.core.files.storage import FileSystemStorage
+from django.core.mail import send_mail
 import os
 
 # Create your models here.
@@ -43,6 +44,12 @@ class WebDevContact(models.Model):
         Send this email to myself
         '''
         print("Sending...")
+        send_mail(
+            self.name, # subject
+            self.body, # body
+            self.email, # from
+            ['contact@camwhite.me'], # to
+        )
 
     def __str__(self):
         return self.email

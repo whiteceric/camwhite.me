@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,9 +25,9 @@ def _join(pre, *toks):
 
 # load settings from environment variables
 config = {
-    "DEBUG": os.environ.get("CAMWHITE_ME_DEBUG", False) == "True",
-    "SECRET_KEY": os.environ.get("CAMWHITE_ME_SECRET_KEY", None),
-    "DB_PATH": os.environ.get("CAMWHITE_ME_DB_PATH", _join(BASE_DIR, 'db.sqlite3'))
+    "DEBUG": os.environ.get("DEBUG", False) == "True",
+    "SECRET_KEY": os.environ.get("SECRET_KEY", None),
+    "DB_PATH": os.environ.get("DB_PATH", _join(BASE_DIR, 'db.sqlite3'))
 }
 
 # Quick-start development settings - unsuitable for production
@@ -155,3 +158,10 @@ CORS_ORIGIN_WHITELIST = [
     "http://camwhite.me",
     "http://www.camwhite.me",
 ]
+
+# EMAIL SETTINGS
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'camwhitedev@gmail.com'
+EMAIL_HOST_PASSWORD = 'vrdflzimoalgvluv'
+EMAIL_USE_TLS = True
