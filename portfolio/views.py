@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import ProjectSerializer
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 
 @api_view(['GET'])
 def project_list(request):
@@ -30,10 +31,9 @@ def bio(request):
     with open(os.path.join(settings.STATIC_ROOT, 'portfolio/bio.json'), 'rb') as bio_json:
         bio_json = json.load(bio_json)
         return Response(bio_json)
-# might keep, dunno if I can use django views still (with React)
-def resume_view(request):
-    with open(os.path.join(settings.STATIC_ROOT, 'portfolio/resume.pdf'), 'rb') as pdf:
-        response = HttpResponse(pdf.read(), content_type='application/pdf')
-        response['Content-Disposition'] = 'inline;filename=resume.pdf'
-        return response
-    pdf.closed
+
+#@ensure_csrf_cookie
+@api_view(['POST'])
+@csrf_exempt
+def new_web_dev_contact(request, data):
+    print(data)
