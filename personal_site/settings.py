@@ -163,5 +163,5 @@ CORS_ORIGIN_WHITELIST = [
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'camwhitedev@gmail.com'
-EMAIL_HOST_PASSWORD = 'vrdflzimoalgvluv'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 EMAIL_USE_TLS = True
