@@ -6,6 +6,8 @@ from django.core.files import File
 from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail
 import os
+from datetime import datetime
+from pytz import timezone
 
 # Create your models here.
 
@@ -44,14 +46,17 @@ class WebDevContact(models.Model):
         '''
         Send this email to myself
         '''
+        date = self.created.astimezone(timezone('US/Eastern'))
+        date_str = datetime.strftime(date, '%A, %d %b, %Y at %I:%M %p')
         subject = f'{self.name} sent a message via camwhite.me'
-        message = f'{subject}\nSent at: {self.created}\n\nMessage:\n{self.body}\n\nEmail:{self.email}'
+        message = f'{subject}\nSent at: {date_str}\n\nMessage:\n{self.body}\n\nEmail: {self.email}'
         send_mail(
             subject, # subject
             message, # body
             settings.EMAIL_HOST_USER, # from
             ['contact@camwhite.me'], # to
         )
+        print(f'Sent:\n{message}')
 
     def __str__(self):
         return self.email
