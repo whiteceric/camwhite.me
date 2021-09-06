@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { API_URL } from "../env";
+//import { API_URL } from "../env";
+
+const { API_URL } = process.env;
 
 export const useFetch = (url) => {
   const [data, setData] = useState([]);
