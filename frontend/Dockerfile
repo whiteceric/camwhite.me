@@ -1,4 +1,8 @@
 FROM node:14-alpine
+
+ARG API_URL
+ENV API_URL=$API_URL
+
 WORKDIR /app/frontend
 
 COPY package.json package-lock.json ./
