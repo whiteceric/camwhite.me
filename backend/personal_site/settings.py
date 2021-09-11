@@ -39,7 +39,7 @@ SECRET_KEY = config['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config["DEBUG"]
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'camwhite.me', 'www.camwhite.me', '45.79.2.154']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'camwhite.me', 'www.camwhite.me', '45.79.2.154', 'camwhite-personal-site.herokuapp.com', '45.33.1.91']
 
 
 # Application definition

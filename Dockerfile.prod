@@ -1,0 +1,17 @@
+FROM node:14-alpine AS frontendbuild
+
+WORKDIR /app/frontend
+
+COPY ./frontend/package.json ./frontend/package-lock.json ./
+RUN npm install
+COPY ./frontend ./
+
+RUN npm run build
+
+FROM python:3
+ENV PYTHONUNBUFFERED 1
+WORKDIR /app/backend
+COPY ./backend/requirements.txt ./
+RUN pip install -r requirements.txt
+COPY ./backend .
+COPY --from=frontendbuild /app/frontend/build ./build
