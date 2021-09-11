@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo_3.png";
+import logo from "../../images/logo_purple.png";
 import resume_pdf from "../../static/resume.pdf";
 
 const NavBar = () => {

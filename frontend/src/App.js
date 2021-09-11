@@ -7,7 +7,7 @@ import ResumePage from "./components/ResumePage/ResumePage";
 import WebDevPage from "./components/WebDevPage/WebDevPage";
 import ThankYouPage from "./components/ThankYouPage/ThankYouPage";
 import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
-import logo from "./images/logo_3.png";
+import logo from "./images/logo_purple.png";
 import { useFetch } from "./components/useFetch";
 
 function App() {
