@@ -1,5 +1,7 @@
 build:
   docker:
-    web: backend/Dockerfile
+    # web: backend/Dockerfile
+    web: frontend/Dockerfile
 run:
-  web: gunicorn personal_site.wsgi:application --bind 0.0.0.0:$PORT
+  # web: gunicorn personal_site.wsgi:application --bind 0.0.0.0:$PORT
+  web: serve -p $PORT -s dist
