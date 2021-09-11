@@ -1,10 +1,9 @@
-FROM node:14-alpine AS frontend-build
+FROM node:14-alpine AS frontendbuild
 
 WORKDIR /app/frontend
 
 COPY ./frontend/package.json ./frontend/package-lock.json ./
 RUN npm install
-RUN npm install react-scripts@3.4.1 -g 
 COPY ./frontend ./
 
 RUN npm run build
@@ -15,4 +14,4 @@ WORKDIR /app/backend
 COPY ./backend/requirements.txt ./
 RUN pip install -r requirements.txt
 COPY ./backend .
-COPY --from=frontend-build /app/frontend/build ./
+COPY --from=frontendbuild /app/frontend/build ./build
