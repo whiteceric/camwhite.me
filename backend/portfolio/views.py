@@ -44,3 +44,8 @@ def new_web_dev_contact(request):
     contact.save()
     contact.send()
     return Response(request.data)
+
+def send_web_dev_contact(request, id):
+    contact = WebDevContact.objects.get(id=id)
+    contact.send()
+    return Response("Contact Sent.")
