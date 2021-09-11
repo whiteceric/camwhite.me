@@ -50,6 +50,7 @@ class WebDevContact(models.Model):
         date_str = datetime.strftime(date, '%A, %d %b, %Y at %I:%M %p')
         subject = f'{self.name} sent a message via camwhite.me'
         message = f'{subject}\nSent at: {date_str}\n\nMessage:\n{self.body}\n\nEmail: {self.email}'
+        print('Sending...', flush=True)
         send_mail(
             subject, # subject
             message, # body
