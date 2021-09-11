@@ -155,6 +155,7 @@ PROJECT_DETAIL_ROOT = _join(BASE_DIR, 'frontend', 'src', 'components', 'ProjectD
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
+    "http://localhost",
     "http://camwhite.me",
     "http://www.camwhite.me",
 ]
