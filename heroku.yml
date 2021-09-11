@@ -4,4 +4,4 @@ build:
     web: frontend/Dockerfile
 run:
   # web: gunicorn personal_site.wsgi:application --bind 0.0.0.0:$PORT
-  web: serve -p $PORT -s dist
+  web: serve -p $PORT -s build
