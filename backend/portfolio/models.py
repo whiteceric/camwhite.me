@@ -56,7 +56,7 @@ class WebDevContact(models.Model):
             settings.EMAIL_HOST_USER, # from
             ['contact@camwhite.me'], # to
         )
-        print(f'Sent:\n{message}')
+        print(f'Sent:\n{message}', flush=True)
 
     def __str__(self):
         return self.email
