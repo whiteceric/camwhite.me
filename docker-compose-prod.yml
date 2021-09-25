@@ -2,7 +2,7 @@ version: "3.2"
 services:
   backend:
     restart: always
-    command : bash -c "python manage.py migrate && python manage.py collectstatic --no-input && gunicorn personal_site.wsgi:application --bind 0.0.0.0:80"
+    command : bash -c "python manage.py migrate && python manage.py collectstatic --no-input && gunicorn personal_site.wsgi:application --bind 0.0.0.0:80 --log-level debug"
     env_file:
       - ./backend/.env
     build:
